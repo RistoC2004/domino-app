@@ -15,9 +15,9 @@ One player starts the DOMINO. Completing a challenge unlocks the next player in 
     <td align="center"><strong>History</strong></td>
   </tr>
   <tr>
-    <td><img src="assets/home.png" width="250"/></td>
-    <td><img src="assets/completed.png" width="250"/></td>
-    <td><img src="assets/history.png" width="250"/></td>
+    <td><img src="assets/Home.PNG" width="250"/></td>
+    <td><img src="assets/Completed%20Chain.PNG" width="250"/></td>
+    <td><img src="assets/History.PNG" width="250"/></td>
   </tr>
 </table>
 
@@ -27,8 +27,8 @@ One player starts the DOMINO. Completing a challenge unlocks the next player in 
     <td align="center"><strong>Authentication</strong></td>
   </tr>
   <tr>
-    <td><img src="assets/broken.png" width="250"/></td>
-    <td><img src="assets/signin.png" width="250"/></td>
+    <td><img src="assets/Broken%20Chain.PNG" width="250"/></td>
+    <td><img src="assets/Sign%20in.PNG" width="250"/></td>
   </tr>
 </table>
 
