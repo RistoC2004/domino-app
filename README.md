@@ -1,10 +1,57 @@
 # Domino
 
-Domino is a mobile social challenge app built around private groups completing a shared daily challenge.
+Domino is a mobile social challenge app built around private groups completing a chain of daily real-world challenges.
 
-Group members join using invite codes, complete the daily DOMINO within a time limit, and submit photo, video or text proof. The app also includes notifications, challenge history, and group-based access controls.
+One player starts the DOMINO. Completing a challenge unlocks the next player in the group. The goal is to complete the entire chain before someone runs out of time and breaks it.
 
-> Production source code is maintained in a private repository.
+> The production source code is maintained in a private repository.
+
+## App Preview
+
+<table>
+  <tr>
+    <td align="center"><strong>Home</strong></td>
+    <td align="center"><strong>Completed Chain</strong></td>
+    <td align="center"><strong>History</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/home.png" width="250"/></td>
+    <td><img src="assets/completed.png" width="250"/></td>
+    <td><img src="assets/history.png" width="250"/></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center"><strong>Broken Chain</strong></td>
+    <td align="center"><strong>Authentication</strong></td>
+  </tr>
+  <tr>
+    <td><img src="assets/broken.png" width="250"/></td>
+    <td><img src="assets/signin.png" width="250"/></td>
+  </tr>
+</table>
+
+## What Domino Does
+
+Domino turns small groups into a shared daily challenge.
+
+Each group works through a sequence of challenges one member at a time. Completing your turn keeps the chain alive and unlocks the next person. Missing the time limit breaks the chain.
+
+Core features include:
+
+- Private challenge groups
+- Invite-code group joining
+- Sequential member turns
+- Timed challenges
+- Photo, video and text proof
+- Group streaks
+- Completed and broken chains
+- Challenge history
+- Push notifications
+- Group sharing
+- Member management
+- Authenticated accounts
 
 ## Tech Stack
 
@@ -13,72 +60,109 @@ Group members join using invite codes, complete the daily DOMINO within a time l
 - TypeScript
 - Supabase
 - PostgreSQL
-- Authentication
-- Storage
+- Supabase Authentication
+- Supabase Storage
 - Edge Functions
-- Push Notifications
-- Git / GitHub
-
-## Core Features
-
-- Private challenge groups
-- Invite-code joining
-- Daily challenge generation
-- Configurable challenge time limits
-- Photo, video and text proof
 - Push notifications
-- Group history
-- Membership-based access controls
-- Shared group state
-- Mobile media workflows
+- Git / GitHub
 
 ## Engineering Highlights
 
-- Built a React Native and Expo application using TypeScript.
-- Integrated Supabase authentication, database and storage services.
-- Implemented group creation and invite-code joining workflows.
-- Added support for daily challenges with configurable time limits.
-- Built media-proof flows for photos and videos.
-- Implemented push notification workflows through backend functions.
-- Added protected historical reveal logic so past challenge content is available only to valid group members.
-- Improved shared application state so group settings persist correctly across navigation.
-- Debugged duplicate group creation and improved mutation behavior to reduce repeated writes.
-- Built loading, joined, empty and error states across group flows.
+- Built the mobile application using React Native, Expo and TypeScript.
+- Integrated Supabase authentication, PostgreSQL and cloud media storage.
+- Implemented private group creation and invite-code joining.
+- Built sequential challenge logic where one completed turn unlocks the next player.
+- Added configurable time limits for challenge completion.
+- Developed photo, video and text proof workflows.
+- Implemented completed-chain and broken-chain states.
+- Built persistent challenge history with group-based access controls.
+- Added push-notification infrastructure using backend functions.
+- Improved duplicate-write protection around important user actions.
+- Handled shared multi-user state across navigation and application sessions.
+- Built moderation-oriented functionality including proof reporting and player blocking.
+
+## Challenge Flow
+
+A Domino challenge follows a shared group sequence:
+
+1. A group begins a DOMINO.
+2. One member receives the first challenge.
+3. The player completes the challenge within the allowed time.
+4. Proof is submitted.
+5. The next member is unlocked.
+6. The chain continues until everyone completes their turn.
+7. If someone runs out of time, the chain breaks.
+8. Completed and broken DOMINOs remain available in history.
+
+This requires shared application state to remain consistent across multiple users and devices.
 
 ## Backend & Shared State
 
-Important shared application rules are handled through backend data and functions rather than relying only on client-side logic.
+Important game rules are backed by shared server-side data instead of relying only on the mobile client.
 
-This includes:
+Backend responsibilities include:
 
 - Group membership
-- Historical challenge access
+- Challenge state
+- Turn progression
+- Historical access
 - Notification workflows
-- Shared challenge state
-- Media access
+- Media storage
+- Membership-based permissions
 
-## Development Focus
+Supabase provides authentication, PostgreSQL persistence, storage and server-side functionality.
 
-Domino was developed with an emphasis on multi-user behavior and reliable group state.
+## History & Access Control
 
-Development included:
+Domino includes a history system for viewing completed and broken challenge chains.
 
-1. Authentication
-2. Group creation
-3. Invite-code joining
-4. Daily challenges
-5. Timed completion flows
-6. Photo/video/text proof
+Historical content is protected so access is tied to valid group membership rather than simply trusting the client.
+
+This required backend-controlled access to shared historical data.
+
+## Notifications
+
+The application includes push-notification infrastructure for keeping group members aware of challenge activity.
+
+Backend notification workflows are integrated with stored Expo push tokens and server-side processing.
+
+## Reliability Work
+
+Development has also focused on application reliability and edge cases.
+
+Examples include:
+
+- Preventing accidental duplicate group creation
+- Persisting group settings correctly
+- Handling joined-group state
+- Restricting historical content by membership
+- Managing shared state across screens
+- Handling media-upload workflows
+- Testing completed and broken challenge paths
+
+## Development Process
+
+Domino has been developed as a production-oriented iOS application.
+
+Development has included:
+
+1. Product design
+2. Authentication
+3. Group creation and joining
+4. Shared challenge state
+5. Timed challenge flows
+6. Media proof
 7. Push notifications
-8. Historical access controls
-9. Shared-state debugging
-10. UI and navigation refinement
+8. History and access controls
+9. Duplicate-write protection
+10. Mobile UX testing
+11. Production and App Store preparation
 
 ## Source Code
 
-The main application repository is private.
+The main application repository is private because it contains active application and backend configuration.
 
-This public repository documents the architecture, technologies and engineering work completed on Domino.
+This repository provides a public technical and visual overview of the project.
 
 ## Developer
 
